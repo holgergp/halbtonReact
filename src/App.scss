@@ -35,6 +35,21 @@
     margin: -5px 0 0 -5px;
     &.root {
       background: lightcoral;
+      animation: wiggle 0.8s ease 2;
+      @keyframes wiggle {
+        0% {
+          top: 50%;
+          margin-top: -5px;
+        }
+        50% {
+          top: 0%;
+          margin-top: 0px;
+        }
+        100% {
+          top: 50%;
+          margin-top: -5px;
+        }
+      }
     }
   }
 }
