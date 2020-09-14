@@ -1,10 +1,10 @@
 import React from 'react';
-import './App.css';
+import './App.scss';
 import Fretboard from './fretboard';
 
 function App() {
   return (
-    <div class="gitarre col-md-12">
+    <div>
       <Fretboard />
     </div>
   );

@@ -1,0 +1,40 @@
+.fretboard {
+  display: flex;
+}
+.string {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0) calc(50% - 1px),
+    rgba(192, 192, 192, 1) calc(50%),
+    rgba(0, 0, 0, 0) calc(50% + 1px)
+  );
+}
+
+.fret {
+  width: 40px;
+  height: 20px;
+  border-right-color: gray;
+  border-right-width: 2px;
+  border-right-style: solid;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+
+  .note {
+    position: absolute;
+    background: lightblue;
+    border-radius: 50%;
+    width: 10px;
+    height: 10px;
+    top: 50%;
+    left: 50%;
+    margin: -5px 0 0 -5px;
+    &.root {
+      background: lightcoral;
+    }
+  }
+}
