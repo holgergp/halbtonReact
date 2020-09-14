@@ -1,6 +1,7 @@
 import React from 'react';
 
-export default ({ fretNumber, note, rootNote }) => {
+export default ({ fret }) => {
+  const { note, rootNote } = fret;
   let noteClass = '';
   if (note) {
     noteClass = 'note';
