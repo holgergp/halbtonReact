@@ -19,7 +19,7 @@ const noteb = { name: 'B', targetName: 'B/H' };
 
 const noNote = { targetName: 'noNote' };
 
-const halbtoene = [
+const halftone = [
   notec,
   notecsharp,
   noted,
@@ -41,17 +41,6 @@ const stringsStartingWith = {
   4: noteg,
   5: noteb,
   6: notee,
-};
-
-const notesOnAString = (stringNumber) => {
-  const startNote = stringsStartingWith[stringNumber];
-
-  const fretNumberArray = [...Array(NUMBER_OF_FRETS).keys()];
-  const toneIndex = findIndex((ton) => ton === startNote, halbtoene);
-
-  return mapIndexed((f, i) => {
-    return halbtoene[(toneIndex + i) % halbtoene.length];
-  }, fretNumberArray);
 };
 
 const markRootNoteOnAString = (stringNumber, rootNote) => {
@@ -101,21 +90,31 @@ export const markOffsetNoteOnTheFretBoard = (rootNoteName, offset) => {
 };
 
 export const findOffsetNote = (rootNote, offset) => {
-  const rootNoteIndex = findIndex((t) => t.targetName === rootNote, halbtoene);
-  const targetNoteIndex = (rootNoteIndex + offset) % halbtoene.length;
-  return halbtoene[targetNoteIndex];
+  const rootNoteIndex = findIndex((t) => t.targetName === rootNote, halftone);
+  const targetNoteIndex = (rootNoteIndex + offset) % halftone.length;
+  return halftone[targetNoteIndex];
 };
 
-const frets = (stringNumber) => {
-  return notesOnAString(stringNumber).map((fret) => ({
+const notesOnAString = (stringNumber) => {
+  const startNote = stringsStartingWith[stringNumber];
+  const fretNumberArray = [...Array(NUMBER_OF_FRETS).keys()];
+  const noteIndexNormalized = findIndex((ton) => ton === startNote, halftone);
+
+  return mapIndexed((f, i) => {
+    return halftone[(noteIndexNormalized + i) % halftone.length];
+  }, fretNumberArray);
+};
+
+const frets = (stringNumber) =>
+  notesOnAString(stringNumber).map((fret) => ({
     ...fret,
     note: false,
     rootNote: false,
   }));
-};
 
 export const fretboard = () => {
   const stringNumbers = Object.keys(stringsStartingWith);
+
   return stringNumbers.reduce((map, stringNumber) => {
     map[stringNumber] = { frets: frets(stringNumber), stringNumber };
     return map;
