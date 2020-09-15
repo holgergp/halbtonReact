@@ -23,7 +23,7 @@
   align-items: center;
   justify-content: center;
   position: relative;
-
+  transition: background 0.5s linear;
   .note {
     position: absolute;
     background: lightblue;
@@ -33,6 +33,8 @@
     top: 50%;
     left: 50%;
     margin: -5px 0 0 -5px;
+    opacity: 1;
+    transition: opacity 0.5s ease-in;
     &.root {
       background: lightcoral;
       animation: wiggle 0.8s ease 2;
@@ -50,6 +52,10 @@
           margin-top: -5px;
         }
       }
+    }
+    &.notDisplayed {
+      opacity: 0;
+      transition: opacity 0.5s ease-in;
     }
   }
 }
