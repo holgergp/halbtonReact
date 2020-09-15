@@ -34,13 +34,31 @@ const halftone = [
   noteb,
 ];
 
-const stringsStartingWith = {
+export const standardTuning = {
   1: notee,
   2: notea,
   3: noted,
   4: noteg,
   5: noteb,
   6: notee,
+};
+
+export const dropd = {
+  1: notee,
+  2: notea,
+  3: noted,
+  4: noteg,
+  5: noteb,
+  6: noted,
+};
+
+export const dropc = {
+  1: noted,
+  2: notea,
+  3: notef,
+  4: notec,
+  5: noteg,
+  6: notec,
 };
 
 const markRootNoteOnAString = (stringNumber, rootNote) => {
@@ -67,8 +85,9 @@ const markOffsetNoteOnAString = (stringNumber, rootNoteName, offset) => {
   );
 };
 
-export const markRootNoteOnTheFretBoard = (rootNoteName) => {
-  const stringNumbers = Object.keys(stringsStartingWith);
+//TODO tuning param might not be needed
+export const markRootNoteOnTheFretBoard = (rootNoteName, tuning) => {
+  const stringNumbers = Object.keys(tuning);
   return stringNumbers.reduce((map, stringNumber) => {
     map[stringNumber] = {
       frets: markRootNoteOnAString(stringNumber, rootNoteName),
@@ -78,8 +97,9 @@ export const markRootNoteOnTheFretBoard = (rootNoteName) => {
   }, {});
 };
 
-export const markOffsetNoteOnTheFretBoard = (rootNoteName, offset) => {
-  const stringNumbers = Object.keys(stringsStartingWith);
+//TODO tuning param might not be needed
+export const markOffsetNoteOnTheFretBoard = (rootNoteName, offset, tuning) => {
+  const stringNumbers = Object.keys(tuning);
   return stringNumbers.reduce((map, stringNumber) => {
     map[stringNumber] = {
       frets: markOffsetNoteOnAString(stringNumber, rootNoteName, offset),
@@ -95,8 +115,8 @@ export const findOffsetNote = (rootNote, offset) => {
   return halftone[targetNoteIndex];
 };
 
-const notesOnAString = (stringNumber) => {
-  const startNote = stringsStartingWith[stringNumber];
+const notesOnAString = (stringNumber, tuning) => {
+  const startNote = tuning[stringNumber];
   const fretNumberArray = [...Array(NUMBER_OF_FRETS).keys()];
   const noteIndexNormalized = findIndex((ton) => ton === startNote, halftone);
 
@@ -105,20 +125,20 @@ const notesOnAString = (stringNumber) => {
   }, fretNumberArray);
 };
 
-const frets = (stringNumber) =>
-  notesOnAString(stringNumber).map((fret) => ({
+const frets = (stringNumber, tuning) =>
+  notesOnAString(stringNumber, tuning).map((fret) => ({
     ...fret,
     note: false,
     rootNote: false,
   }));
 
-export const fretboard = () => {
-  const stringNumbers = Object.keys(stringsStartingWith);
+export const fretboardWith = (tuning) => {
+  const stringNumbers = Object.keys(tuning);
 
   return stringNumbers.reduce((map, stringNumber) => {
-    map[stringNumber] = { frets: frets(stringNumber), stringNumber };
+    map[stringNumber] = { frets: frets(stringNumber, tuning), stringNumber };
     return map;
   }, {});
 };
 
-const defaultFretboard = fretboard();
+const defaultFretboard = fretboardWith(standardTuning);

@@ -23,7 +23,9 @@
   align-items: center;
   justify-content: center;
   position: relative;
-  transition: background 0.5s linear;
+  .fretName {
+    color: gray;
+  }
   .note {
     position: absolute;
     background: lightblue;
