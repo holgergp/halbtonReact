@@ -19,10 +19,6 @@ const noteb = { name: 'B', targetName: 'B/H' };
 
 const noNote = { targetName: 'noNote' };
 
-/**
- * All halbtoene
- * @type {Array}
- */
 const halbtoene = [
   notec,
   notecsharp,
@@ -47,22 +43,6 @@ const stringsStartingWith = {
   6: notee,
 };
 
-const frets = (stringNumber) => {
-  return notesOnAString(stringNumber).map((fret) => {
-    //const note = Math.random() >= 0.5;
-    //const rootNote = Math.random() >= 0.8;
-    return { ...fret, note: false, rootNote: false };
-  });
-};
-
-export const fretboard = () => {
-  const stringNumbers = Object.keys(stringsStartingWith);
-  return stringNumbers.reduce((map, stringNumber) => {
-    map[stringNumber] = { frets: frets(stringNumber), stringNumber };
-    return map;
-  }, {});
-};
-
 const notesOnAString = (stringNumber) => {
   const startNote = stringsStartingWith[stringNumber];
 
@@ -81,7 +61,7 @@ const markRootNoteOnAString = (stringNumber, rootNote) => {
       rootNote: string.targetName === rootNote,
       fretnumber,
     }),
-    fretboard()[stringNumber].frets
+    defaultFretboard[stringNumber].frets
   );
 };
 
@@ -94,7 +74,7 @@ const markOffsetNoteOnAString = (stringNumber, rootNoteName, offset) => {
       rootNote: string.targetName === rootNoteName,
       fretnumber,
     }),
-    fretboard()[stringNumber].frets
+    defaultFretboard[stringNumber].frets
   );
 };
 
@@ -125,3 +105,21 @@ export const findOffsetNote = (rootNote, offset) => {
   const targetNoteIndex = (rootNoteIndex + offset) % halbtoene.length;
   return halbtoene[targetNoteIndex];
 };
+
+const frets = (stringNumber) => {
+  return notesOnAString(stringNumber).map((fret) => ({
+    ...fret,
+    note: false,
+    rootNote: false,
+  }));
+};
+
+export const fretboard = () => {
+  const stringNumbers = Object.keys(stringsStartingWith);
+  return stringNumbers.reduce((map, stringNumber) => {
+    map[stringNumber] = { frets: frets(stringNumber), stringNumber };
+    return map;
+  }, {});
+};
+
+const defaultFretboard = fretboard();
