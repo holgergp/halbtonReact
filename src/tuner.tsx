@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
-import { Fretboard } from './types';
+import { Fretboard, Note } from './types';
 import {
+  findOffsetNote,
   halftones,
   markOffsetNoteOnTheFretBoard,
   notec,
@@ -10,9 +11,10 @@ import {
 
 interface Props {
   changeFretboard: (fretboard: Fretboard) => void;
+  setOffsetNote: (offsetNote: Note) => void;
 }
 
-export default ({ changeFretboard }: Props): JSX.Element => {
+export default ({ changeFretboard, setOffsetNote }: Props): JSX.Element => {
   const [rootnoteName, setRootnoteName] = useState(notec.targetName);
   const [offset, setOffset] = useState(0);
   const [tuningName, setTuningName] = useState(standardTuningInfo.name);
@@ -32,6 +34,7 @@ export default ({ changeFretboard }: Props): JSX.Element => {
                 standardTuningInfo.name
               )
             );
+            setOffsetNote(findOffsetNote(rootnoteName, offset));
           }}
         >
           {halftones.map((t) => {
@@ -57,6 +60,7 @@ export default ({ changeFretboard }: Props): JSX.Element => {
                 standardTuningInfo.name
               )
             );
+            setOffsetNote(findOffsetNote(rootnoteName, offset));
           }}
         />
         <select

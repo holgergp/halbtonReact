@@ -105,7 +105,6 @@ const markOffsetNoteOnAString = (
   );
 };
 
-//TODO tuning param might not be needed
 export const markRootNoteOnTheFretBoard = (
   rootNoteName: string,
   tuning: Tuning
@@ -119,14 +118,12 @@ export const markRootNoteOnTheFretBoard = (
   }, {} as Fretboard);
 };
 
-//TODO tuning param might not be needed
 export const markOffsetNoteOnTheFretBoard = (
   rootNoteName: string,
   offset: number,
   tuningName: string
 ): Fretboard => {
   const tuning = getTuningForName(tuningName);
-  console.log(tuning);
   return stringNumbers(tuning).reduce<Fretboard>(
     (fretboard: Fretboard, stringNumber: number) => {
       fretboard[stringNumber] = {
