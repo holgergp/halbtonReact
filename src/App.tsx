@@ -4,7 +4,7 @@ import Guitar from './guitar';
 
 function App() {
   return (
-    <div>
+    <div className="app">
       <Guitar />
     </div>
   );

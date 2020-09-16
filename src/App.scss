@@ -23,6 +23,11 @@
   align-items: center;
   justify-content: center;
   position: relative;
+  &:first-child {
+    border-right-color: gray;
+    border-right-width: 10px;
+    border-right-style: solid;
+  }
   .fretName {
     color: gray;
   }
@@ -60,4 +65,36 @@
       transition: opacity 0.5s ease-in;
     }
   }
+}
+
+.tuner {
+  display: grid;
+  grid-template-columns: 175px 50px 40px 175px 100px 240px 30px;
+  padding-bottom: 10px;
+  justify-content: center;
+}
+
+.offset {
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+.rootNote {
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+.tuning {
+  margin-left: 5px;
+  margin-right: 5px;
+}
+.display {
+  font-weight: bold;
+  margin-left: 5px;
+}
+
+.app {
+  padding-top: 10px;
+  padding-left: 10px;
+  width: 850px;
 }

@@ -5,5 +5,5 @@ interface Props {
   offsetNote: Note;
 }
 export default ({ offsetNote }: Props): JSX.Element => {
-  return <div>{offsetNote.name}</div>;
+  return <div className="display">{offsetNote.name}</div>;
 };
