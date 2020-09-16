@@ -1,11 +1,11 @@
 import React from 'react';
 import './App.scss';
-import Fretboard from './fretboard';
+import Guitar from './guitar';
 
 function App() {
   return (
     <div>
-      <Fretboard />
+      <Guitar />
     </div>
   );
 }

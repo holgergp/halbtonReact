@@ -1,24 +1,15 @@
-import React, { useState } from 'react';
+import React from 'react';
 import String from './strings';
-import {
-  markRootNoteOnTheFretBoard,
-  markOffsetNoteOnTheFretBoard,
-  standardTuning,
-} from './notesOnAString';
+import { Fretboard } from './types';
 
-export default (): JSX.Element => {
-  const [fretboard, setFretboard] = useState(
-    markRootNoteOnTheFretBoard('E', standardTuning)
-  );
+interface Props {
+  fretboard: Fretboard;
+}
+
+export default ({ fretboard }: Props): JSX.Element => {
   const fretBoardMarkup = Object.values(fretboard).map((string) => {
     return (
-      <div
-        key={string.stringNumber}
-        className="fretboard"
-        onClick={() =>
-          setFretboard(markOffsetNoteOnTheFretBoard('E', 3, standardTuning))
-        }
-      >
+      <div key={string.stringNumber} className="fretboard">
         <String string={string} />
       </div>
     );

@@ -1,8 +1,8 @@
-import { Fret, Fretboard, Note, Tuning } from './types';
+import { Fret, Fretboard, Note, Tuning, TuningInfo } from './types';
 
 const NUMBER_OF_FRETS = 20;
 
-const notec = { name: 'C', targetName: 'C' };
+export const notec = { name: 'C', targetName: 'C' };
 const notecsharp = { name: 'C#', targetName: 'C#/D\u266D' };
 const noted = { name: 'D', targetName: 'D' };
 const notedsharp = { name: 'D#', targetName: 'D#/E\u266D' };
@@ -17,7 +17,7 @@ const noteb = { name: 'B', targetName: 'B/H' };
 
 // const noNote = { targetName: 'noNote' };
 
-const halftone = [
+export const halftones = [
   notec,
   notecsharp,
   noted,
@@ -57,6 +57,18 @@ export const dropc: Tuning = {
   4: notec,
   5: noteg,
   6: notec,
+};
+
+export const standardTuningInfo = { name: 'Standard', tuning: standardTuning };
+export const tunings: TuningInfo[] = [
+  standardTuningInfo,
+  { name: 'DropD', tuning: dropd },
+  { name: 'DropC', tuning: dropc },
+];
+
+const getTuningForName = (tunimgName: string): Tuning => {
+  const tuning = tunings.find((t) => t.name);
+  return tuning ? tuning.tuning : standardTuning;
 };
 
 const stringNumbers = (tuning: Tuning): number[] =>
@@ -109,9 +121,9 @@ export const markRootNoteOnTheFretBoard = (
 export const markOffsetNoteOnTheFretBoard = (
   rootNoteName: string,
   offset: number,
-  tuning: Tuning
+  tuningName: string
 ): Fretboard => {
-  return stringNumbers(tuning).reduce<Fretboard>(
+  return stringNumbers(getTuningForName(tuningName)).reduce<Fretboard>(
     (fretboard: Fretboard, stringNumber: number) => {
       fretboard[stringNumber] = {
         frets: markOffsetNoteOnAString(stringNumber, rootNoteName, offset),
@@ -124,22 +136,22 @@ export const markOffsetNoteOnTheFretBoard = (
 };
 
 export const findOffsetNote = (rootNoteName: string, offset: number): Note => {
-  const rootNoteIndex = halftone.findIndex(
+  const rootNoteIndex = halftones.findIndex(
     (t: Note) => t.targetName === rootNoteName
   );
-  const targetNoteIndex = (rootNoteIndex + offset) % halftone.length;
-  return halftone[targetNoteIndex];
+  const targetNoteIndex = (rootNoteIndex + offset) % halftones.length;
+  return halftones[targetNoteIndex];
 };
 
 const notesOnAString = (stringNumber: number, tuning: Tuning): Note[] => {
   const startNote = tuning[stringNumber];
   const fretNumberArray = [...Array(NUMBER_OF_FRETS).keys()];
-  const noteIndexNormalized = halftone.findIndex(
+  const noteIndexNormalized = halftones.findIndex(
     (ton: Note) => ton === startNote
   );
 
   return fretNumberArray.map((i: number) => {
-    return halftone[(noteIndexNormalized + i) % halftone.length];
+    return halftones[(noteIndexNormalized + i) % halftones.length];
   }, fretNumberArray);
 };
 

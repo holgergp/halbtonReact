@@ -23,3 +23,8 @@ export interface GuitarString {
   frets: Fret[];
   stringNumber: number;
 }
+
+export interface TuningInfo {
+  name: string;
+  tuning: Tuning;
+}
