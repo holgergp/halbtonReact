@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Fretboard, Note } from './types';
+import { Fretboard } from './types';
 import Display from './display';
 
 import {
