@@ -35,7 +35,11 @@ export default ({ changeFretboard }: Props): JSX.Element => {
           }}
         >
           {halftones.map((t) => {
-            return <option value={t.targetName}>{t.name}</option>;
+            return (
+              <option key={t.name} value={t.targetName}>
+                {t.name}
+              </option>
+            );
           })}
         </select>
         <input
@@ -66,7 +70,11 @@ export default ({ changeFretboard }: Props): JSX.Element => {
           }}
         >
           {tunings.map((t) => {
-            return <option value={t.name}>{t.name}</option>;
+            return (
+              <option key={t.name} value={t.name}>
+                {t.name}
+              </option>
+            );
           })}
         </select>
       </form>

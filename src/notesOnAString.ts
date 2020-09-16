@@ -76,9 +76,10 @@ const stringNumbers = (tuning: Tuning): number[] =>
 
 const markRootNoteOnAString = (
   stringNumber: number,
-  rootNoteName: string
+  rootNoteName: string,
+  tuning: Tuning
 ): Fret[] => {
-  return defaultFretboard[stringNumber].frets.map(
+  return fretboardWith(tuning)[stringNumber].frets.map(
     (fret: Fret, fretnumber: number) => ({
       ...fret,
       rootNote: fret.targetName === rootNoteName,
@@ -90,10 +91,11 @@ const markRootNoteOnAString = (
 const markOffsetNoteOnAString = (
   stringNumber: number,
   rootNoteName: string,
-  offset: number
+  offset: number,
+  tuning: Tuning
 ): Fret[] => {
   const offsetNote = findOffsetNote(rootNoteName, offset);
-  return defaultFretboard[stringNumber].frets.map(
+  return fretboardWith(tuning)[stringNumber].frets.map(
     (fret: Fret, fretnumber: number) => ({
       ...fret,
       note: fret.targetName === offsetNote.name,
@@ -110,7 +112,7 @@ export const markRootNoteOnTheFretBoard = (
 ): Fretboard => {
   return stringNumbers(tuning).reduce((fretboard, stringNumber) => {
     fretboard[stringNumber] = {
-      frets: markRootNoteOnAString(stringNumber, rootNoteName),
+      frets: markRootNoteOnAString(stringNumber, rootNoteName, tuning),
       stringNumber,
     };
     return fretboard;
@@ -123,10 +125,16 @@ export const markOffsetNoteOnTheFretBoard = (
   offset: number,
   tuningName: string
 ): Fretboard => {
-  return stringNumbers(getTuningForName(tuningName)).reduce<Fretboard>(
+  const tuning = getTuningForName(tuningName);
+  return stringNumbers(tuning).reduce<Fretboard>(
     (fretboard: Fretboard, stringNumber: number) => {
       fretboard[stringNumber] = {
-        frets: markOffsetNoteOnAString(stringNumber, rootNoteName, offset),
+        frets: markOffsetNoteOnAString(
+          stringNumber,
+          rootNoteName,
+          offset,
+          tuning
+        ),
         stringNumber,
       };
       return fretboard;
@@ -175,5 +183,3 @@ export const fretboardWith = (tuning: Tuning): Fretboard => {
     {} as Fretboard
   );
 };
-
-const defaultFretboard: Fretboard = fretboardWith(standardTuning);
