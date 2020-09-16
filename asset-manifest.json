@@ -1,22 +1,22 @@
 {
   "files": {
     "main.css": "/halbtonReact/static/css/main.2777e850.chunk.css",
-    "main.js": "/halbtonReact/static/js/main.45b1221f.chunk.js",
-    "main.js.map": "/halbtonReact/static/js/main.45b1221f.chunk.js.map",
+    "main.js": "/halbtonReact/static/js/main.2fd8e3c4.chunk.js",
+    "main.js.map": "/halbtonReact/static/js/main.2fd8e3c4.chunk.js.map",
     "runtime-main.js": "/halbtonReact/static/js/runtime-main.5ff3a4e5.js",
     "runtime-main.js.map": "/halbtonReact/static/js/runtime-main.5ff3a4e5.js.map",
-    "static/js/2.9aebc624.chunk.js": "/halbtonReact/static/js/2.9aebc624.chunk.js",
-    "static/js/2.9aebc624.chunk.js.map": "/halbtonReact/static/js/2.9aebc624.chunk.js.map",
+    "static/js/2.983dadea.chunk.js": "/halbtonReact/static/js/2.983dadea.chunk.js",
+    "static/js/2.983dadea.chunk.js.map": "/halbtonReact/static/js/2.983dadea.chunk.js.map",
     "index.html": "/halbtonReact/index.html",
-    "precache-manifest.b01e4de61b5f71dfed641eff35d800ca.js": "/halbtonReact/precache-manifest.b01e4de61b5f71dfed641eff35d800ca.js",
+    "precache-manifest.f10b25952024024441f8975891370bce.js": "/halbtonReact/precache-manifest.f10b25952024024441f8975891370bce.js",
     "service-worker.js": "/halbtonReact/service-worker.js",
     "static/css/main.2777e850.chunk.css.map": "/halbtonReact/static/css/main.2777e850.chunk.css.map",
-    "static/js/2.9aebc624.chunk.js.LICENSE.txt": "/halbtonReact/static/js/2.9aebc624.chunk.js.LICENSE.txt"
+    "static/js/2.983dadea.chunk.js.LICENSE.txt": "/halbtonReact/static/js/2.983dadea.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.5ff3a4e5.js",
-    "static/js/2.9aebc624.chunk.js",
+    "static/js/2.983dadea.chunk.js",
     "static/css/main.2777e850.chunk.css",
-    "static/js/main.45b1221f.chunk.js"
+    "static/js/main.2fd8e3c4.chunk.js"
   ]
 }
