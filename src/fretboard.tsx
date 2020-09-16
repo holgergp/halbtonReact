@@ -6,11 +6,11 @@ import {
   standardTuning,
 } from './notesOnAString';
 
-export default () => {
+export default (): JSX.Element => {
   const [fretboard, setFretboard] = useState(
     markRootNoteOnTheFretBoard('E', standardTuning)
   );
-  return Object.values(fretboard).map((string) => {
+  const fretBoardMarkup = Object.values(fretboard).map((string) => {
     return (
       <div
         key={string.stringNumber}
@@ -23,4 +23,5 @@ export default () => {
       </div>
     );
   });
+  return <div>{fretBoardMarkup}</div>;
 };

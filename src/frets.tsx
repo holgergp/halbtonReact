@@ -1,6 +1,11 @@
 import React from 'react';
+import { Fret } from './types';
 
-export default ({ fret }) => {
+interface Props {
+  fret: Fret;
+}
+
+export default ({ fret }: Props): JSX.Element => {
   const { note, rootNote } = fret;
   let noteClass = 'note';
   if (rootNote) {
