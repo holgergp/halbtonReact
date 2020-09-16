@@ -66,8 +66,8 @@ export const tunings: TuningInfo[] = [
   { name: 'DropC', tuning: dropc },
 ];
 
-const getTuningForName = (tunimgName: string): Tuning => {
-  const tuning = tunings.find((t) => t.name);
+const getTuningForName = (tuningName: string): Tuning => {
+  const tuning = tunings.find((t) => t.name === tuningName);
   return tuning ? tuning.tuning : standardTuning;
 };
 
@@ -126,6 +126,7 @@ export const markOffsetNoteOnTheFretBoard = (
   tuningName: string
 ): Fretboard => {
   const tuning = getTuningForName(tuningName);
+  console.log(tuning);
   return stringNumbers(tuning).reduce<Fretboard>(
     (fretboard: Fretboard, stringNumber: number) => {
       fretboard[stringNumber] = {
