@@ -74,21 +74,7 @@ const getTuningForName = (tuningName: string): Tuning => {
 const stringNumbers = (tuning: Tuning): number[] =>
   Object.keys(tuning).map((s) => parseInt(s));
 
-const markRootNoteOnAString = (
-  stringNumber: number,
-  rootNoteName: string,
-  tuning: Tuning
-): Fret[] => {
-  return fretboardWith(tuning)[stringNumber].frets.map(
-    (fret: Fret, fretnumber: number) => ({
-      ...fret,
-      rootNote: fret.targetName === rootNoteName,
-      fretnumber,
-    })
-  );
-};
-
-const markOffsetNoteOnAString = (
+const markNotesOnAString = (
   stringNumber: number,
   rootNoteName: string,
   offset: number,
@@ -105,20 +91,7 @@ const markOffsetNoteOnAString = (
   );
 };
 
-export const markRootNoteOnTheFretBoard = (
-  rootNoteName: string,
-  tuning: Tuning
-): Fretboard => {
-  return stringNumbers(tuning).reduce((fretboard, stringNumber) => {
-    fretboard[stringNumber] = {
-      frets: markRootNoteOnAString(stringNumber, rootNoteName, tuning),
-      stringNumber,
-    };
-    return fretboard;
-  }, {} as Fretboard);
-};
-
-export const markOffsetNoteOnTheFretBoard = (
+export const markNotesOnTheFretboard = (
   rootNoteName: string,
   offset: number,
   tuningName: string
@@ -127,12 +100,7 @@ export const markOffsetNoteOnTheFretBoard = (
   return stringNumbers(tuning).reduce<Fretboard>(
     (fretboard: Fretboard, stringNumber: number) => {
       fretboard[stringNumber] = {
-        frets: markOffsetNoteOnAString(
-          stringNumber,
-          rootNoteName,
-          offset,
-          tuning
-        ),
+        frets: markNotesOnAString(stringNumber, rootNoteName, offset, tuning),
         stringNumber,
       };
       return fretboard;

@@ -3,7 +3,7 @@ import { Fretboard, Note } from './types';
 import {
   findOffsetNote,
   halftones,
-  markOffsetNoteOnTheFretBoard,
+  markNotesOnTheFretboard,
   notec,
   standardTuningInfo,
   tunings,
@@ -28,7 +28,7 @@ export default ({ changeFretboard, setOffsetNote }: Props): JSX.Element => {
             const newRootNoteName = evt.target.value;
             setRootnoteName(newRootNoteName);
             changeFretboard(
-              markOffsetNoteOnTheFretBoard(
+              markNotesOnTheFretboard(
                 newRootNoteName,
                 offset,
                 standardTuningInfo.name
@@ -54,7 +54,7 @@ export default ({ changeFretboard, setOffsetNote }: Props): JSX.Element => {
             );
             setOffset(newOffset);
             changeFretboard(
-              markOffsetNoteOnTheFretBoard(
+              markNotesOnTheFretboard(
                 rootnoteName,
                 newOffset,
                 standardTuningInfo.name
@@ -69,7 +69,7 @@ export default ({ changeFretboard, setOffsetNote }: Props): JSX.Element => {
             const newTuningName = evt.target.value;
             setTuningName(newTuningName);
             changeFretboard(
-              markOffsetNoteOnTheFretBoard(rootnoteName, offset, newTuningName)
+              markNotesOnTheFretboard(rootnoteName, offset, newTuningName)
             );
           }}
         >
