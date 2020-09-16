@@ -112,12 +112,12 @@ export const markOffsetNoteOnTheFretBoard = (
   tuning: Tuning
 ): Fretboard => {
   return stringNumbers(tuning).reduce<Fretboard>(
-    (map: Fretboard, stringNumber: number) => {
-      map[stringNumber] = {
+    (fretboard: Fretboard, stringNumber: number) => {
+      fretboard[stringNumber] = {
         frets: markOffsetNoteOnAString(stringNumber, rootNoteName, offset),
         stringNumber,
       };
-      return map;
+      return fretboard;
     },
     {} as Fretboard
   );
@@ -144,17 +144,21 @@ const notesOnAString = (stringNumber: number, tuning: Tuning): Note[] => {
 };
 
 const frets = (stringNumber: number, tuning: Tuning): Fret[] =>
-  notesOnAString(stringNumber, tuning).map((fret) => ({
+  notesOnAString(stringNumber, tuning).map((fret, fretnumber) => ({
     ...fret,
     note: false,
     rootNote: false,
+    fretnumber,
   }));
 
 export const fretboardWith = (tuning: Tuning): Fretboard => {
   return stringNumbers(tuning).reduce(
-    (map: Fretboard, stringNumber: number) => {
-      map[stringNumber] = { frets: frets(stringNumber, tuning), stringNumber };
-      return map;
+    (fretboard: Fretboard, stringNumber: number) => {
+      fretboard[stringNumber] = {
+        frets: frets(stringNumber, tuning),
+        stringNumber,
+      };
+      return fretboard;
     },
     {} as Fretboard
   );

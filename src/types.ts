@@ -7,7 +7,7 @@ export interface Fret {
   targetName: string;
   note?: boolean;
   rootNote?: boolean;
-  fretnumber?: number;
+  fretnumber: number;
 }
 
 export interface Tuning {
