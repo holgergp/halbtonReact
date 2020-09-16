@@ -15,7 +15,7 @@ const notea = { name: 'A', targetName: 'A' };
 const noteasharp = { name: 'A#', targetName: 'A#/H\u266D' };
 const noteb = { name: 'B', targetName: 'B/H' };
 
-const noNote = { targetName: 'noNote' };
+// const noNote = { targetName: 'noNote' };
 
 const halftone = [
   notec,
