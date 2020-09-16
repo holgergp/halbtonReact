@@ -16,6 +16,7 @@ export default ({ fret }: Props): JSX.Element => {
   return (
     <span className={'fret'}>
       <div className={noteClass}></div>
+      <div className="notename">{fret.name}</div>
     </span>
   );
 };
