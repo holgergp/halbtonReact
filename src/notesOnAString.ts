@@ -1,4 +1,3 @@
-import { findIndex } from 'ramda';
 import { Fret, Fretboard, Note, Tuning } from './types';
 
 const NUMBER_OF_FRETS = 20;
@@ -125,9 +124,8 @@ export const markOffsetNoteOnTheFretBoard = (
 };
 
 export const findOffsetNote = (rootNoteName: string, offset: number): Note => {
-  const rootNoteIndex = findIndex(
-    (t: Note) => t.targetName === rootNoteName,
-    halftone
+  const rootNoteIndex = halftone.findIndex(
+    (t: Note) => t.targetName === rootNoteName
   );
   const targetNoteIndex = (rootNoteIndex + offset) % halftone.length;
   return halftone[targetNoteIndex];
@@ -136,9 +134,8 @@ export const findOffsetNote = (rootNoteName: string, offset: number): Note => {
 const notesOnAString = (stringNumber: number, tuning: Tuning): Note[] => {
   const startNote = tuning[stringNumber];
   const fretNumberArray = [...Array(NUMBER_OF_FRETS).keys()];
-  const noteIndexNormalized = findIndex(
-    (ton: Note) => ton === startNote,
-    halftone
+  const noteIndexNormalized = halftone.findIndex(
+    (ton: Note) => ton === startNote
   );
 
   return fretNumberArray.map((i: number) => {
