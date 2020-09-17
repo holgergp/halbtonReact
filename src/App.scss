@@ -68,6 +68,9 @@
   .notename {
     visibility: hidden;
     cursor: default;
+    &.notesVisible {
+      visibility: visible;
+    }
   }
   &:hover {
     .notename {
