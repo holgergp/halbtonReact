@@ -66,15 +66,17 @@
     }
   }
   .notename {
-    visibility: hidden;
+    opacity: 0;
     cursor: default;
+    transition: opacity 0.25s ease-out;
     &.notesVisible {
-      visibility: visible;
+      opacity: 1;
+      transition: opacity 0.4s ease-in;
     }
   }
   &:hover {
     .notename {
-      visibility: visible;
+      opacity: 1;
     }
   }
 }
@@ -109,4 +111,10 @@
   padding-top: 10px;
   padding-left: 10px;
   width: 850px;
+}
+
+footer {
+  padding-top: 10px;
+  font-size: smaller;
+  text-align: center;
 }

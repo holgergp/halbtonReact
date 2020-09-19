@@ -16,7 +16,8 @@ export default (): JSX.Element => {
     <div>
       <Tuner changeFretboard={setFretboard} />
       <Fretboard fretboard={fretboard} />
-      <article>Press CTRL+k to toggle notenames</article>
+
+      <footer>Press CTRL+k to toggle notenames</footer>
     </div>
   );
 };
