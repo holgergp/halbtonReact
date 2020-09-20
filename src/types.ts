@@ -5,7 +5,7 @@ export interface Fretboard {
 export interface Fret {
   name: string;
   targetName: string;
-  note?: boolean;
+  offsetNote?: boolean;
   rootNote?: boolean;
   fretnumber: number;
 }

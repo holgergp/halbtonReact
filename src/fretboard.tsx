@@ -1,5 +1,5 @@
 import React from 'react';
-import String from './strings';
+import GuitarString from './guitarString';
 import { Fretboard } from './types';
 
 interface Props {
@@ -10,7 +10,7 @@ export default ({ fretboard }: Props): JSX.Element => {
   const fretBoardMarkup = Object.values(fretboard).map((string) => {
     return (
       <div key={string.stringNumber} className="fretboard">
-        <String string={string} />
+        <GuitarString string={string} />
       </div>
     );
   });

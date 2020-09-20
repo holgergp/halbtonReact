@@ -1,5 +1,5 @@
 import React from 'react';
-import Fret from './frets';
+import Fret from './fret';
 import { GuitarString } from './types';
 
 interface Props {

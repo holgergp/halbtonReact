@@ -26,7 +26,7 @@ export default ({ changeFretboard }: Props): JSX.Element => {
     <form className="tuner">
       <span>Wenn ich vom Grundton</span>
       <select
-        className="rootNote"
+        className="tuner--rootNote"
         value={rootnoteName}
         onChange={(evt) => {
           const newRootNoteName = evt.target.value;
@@ -51,7 +51,7 @@ export default ({ changeFretboard }: Props): JSX.Element => {
       </select>
 
       <input
-        className="offset"
+        className="tuner--offset"
         type="number"
         value={offset}
         onChange={(evt) => {
@@ -69,7 +69,7 @@ export default ({ changeFretboard }: Props): JSX.Element => {
       />
       <span>Schritte weitergehe und</span>
       <select
-        className="tuning"
+        className="tuner--tuning"
         value={tuningName}
         onChange={(evt) => {
           const newTuningName = evt.target.value;

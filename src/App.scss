@@ -1,6 +1,39 @@
+.app {
+  padding-top: 10px;
+  padding-left: 10px;
+  width: 850px;
+}
+
 .fretboard {
   display: flex;
 }
+
+.tuner {
+  display: grid;
+  grid-template-columns: 175px 50px 40px 175px 100px 240px 30px;
+  padding-bottom: 10px;
+  justify-content: center;
+  &--offset {
+    margin-left: 5px;
+    margin-right: 5px;
+  }
+
+  &--rootNote {
+    margin-left: 5px;
+    margin-right: 5px;
+  }
+
+  &--tuning {
+    margin-left: 5px;
+    margin-right: 5px;
+  }
+}
+
+.display {
+  font-weight: bold;
+  margin-left: 5px;
+}
+
 .string {
   display: flex;
   flex-direction: row;
@@ -28,89 +61,70 @@
     border-right-width: 10px;
     border-right-style: solid;
   }
-  .fretName {
+  &__fretName {
     color: gray;
   }
-  .note {
-    position: absolute;
-    background: lightblue;
-    border-radius: 50%;
-    width: 10px;
-    height: 10px;
-    top: 50%;
-    left: 50%;
-    margin: -5px 0 0 -5px;
+}
+
+@mixin noteBubble {
+  position: absolute;
+  background: lightblue;
+  opacity: 1;
+  border-radius: 50%;
+  width: 10px;
+  height: 10px;
+  top: 50%;
+  left: 50%;
+  margin: -5px 0 0 -5px;
+}
+
+.note {
+  &__offset {
+    @include noteBubble;
     opacity: 1;
-    transition: opacity 0.3s ease-in;
-    &.root {
-      background: lightcoral;
-      animation: wiggle 0.8s ease 2;
-      @keyframes wiggle {
-        0% {
-          top: 50%;
-          margin-top: -5px;
-        }
-        50% {
-          top: 0%;
-          margin-top: 0px;
-        }
-        100% {
-          top: 50%;
-          margin-top: -5px;
-        }
+    background: lightblue;
+    transition: 0.3s ease-in;
+  }
+  &__root {
+    @include noteBubble;
+    background: lightcoral;
+    opacity: 1;
+    animation: wiggle 0.8s ease 1;
+    @keyframes wiggle {
+      0% {
+        top: 50%;
+        margin-top: -5px;
+      }
+      50% {
+        top: 0%;
+        margin-top: 0px;
+      }
+      100% {
+        top: 50%;
+        margin-top: -5px;
       }
     }
-    &.notDisplayed {
-      opacity: 0;
-      transition: opacity 0.5s ease-in;
-    }
   }
-  .notename {
+  &__notVisible {
+    @include noteBubble;
+    opacity: 0;
+    transition: opacity 0.8s ease-in;
+  }
+}
+
+.notename {
+  &--notesInvisible {
     opacity: 0;
     cursor: default;
     transition: opacity 0.25s ease-out;
-    &.notesVisible {
-      opacity: 1;
-      transition: opacity 0.4s ease-in;
-    }
-  }
-  &:hover {
-    .notename {
+    &:hover {
       opacity: 1;
     }
   }
-}
-
-.tuner {
-  display: grid;
-  grid-template-columns: 175px 50px 40px 175px 100px 240px 30px;
-  padding-bottom: 10px;
-  justify-content: center;
-}
-
-.offset {
-  margin-left: 5px;
-  margin-right: 5px;
-}
-
-.rootNote {
-  margin-left: 5px;
-  margin-right: 5px;
-}
-
-.tuning {
-  margin-left: 5px;
-  margin-right: 5px;
-}
-.display {
-  font-weight: bold;
-  margin-left: 5px;
-}
-
-.app {
-  padding-top: 10px;
-  padding-left: 10px;
-  width: 850px;
+  &--notesVisible {
+    opacity: 1;
+    transition: opacity 0.4s ease-in;
+  }
 }
 
 footer {
