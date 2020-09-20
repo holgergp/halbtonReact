@@ -22,6 +22,9 @@ export default ({ changeFretboard }: Props): JSX.Element => {
 
   const [offsetNote, setOffsetNote] = useState(notec);
 
+  const isNumber = (shouldBeNumber: string) => {
+    return !!shouldBeNumber || isNaN(+shouldBeNumber);
+  };
   return (
     <form className="tuner">
       <span>Wenn ich vom Grundton</span>
@@ -31,7 +34,7 @@ export default ({ changeFretboard }: Props): JSX.Element => {
         onChange={(evt) => {
           const newRootNoteName = evt.target.value;
           setRootnoteName(newRootNoteName);
-          if (isNaN(+offset)) {
+          if (!isNumber(offset)) {
             return;
           }
           changeFretboard(
@@ -61,7 +64,7 @@ export default ({ changeFretboard }: Props): JSX.Element => {
           const newOffset = evt.target.value;
           setOffset(newOffset);
           console.log(isNaN(+newOffset));
-          if (isNaN(+newOffset)) {
+          if (!isNumber(newOffset)) {
             return;
           }
           changeFretboard(
@@ -82,7 +85,7 @@ export default ({ changeFretboard }: Props): JSX.Element => {
         onChange={(evt) => {
           const newTuningName = evt.target.value;
           setTuningName(newTuningName);
-          if (isNaN(+offset)) {
+          if (!isNumber(offset)) {
             return;
           }
           changeFretboard(

@@ -1,4 +1,3 @@
-
 describe('Tuner works', () => {
     beforeEach(() => {
       cy.visit('/');
@@ -15,6 +14,6 @@ describe('Tuner works', () => {
         .type(`{selectall}{backspace}${offset}`);
 
     const selectOffsetNote = '.display';
-    return cy.get(selectOffsetNote).should('equal', 'G');
+    return cy.get(selectOffsetNote).should('contain', 'G');
     });
   });

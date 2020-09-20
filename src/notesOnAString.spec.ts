@@ -2,6 +2,7 @@ import {
   findOffsetNote,
   fretboardWith,
   markNotesOnTheFretboard,
+  noteb,
   notec,
   noted,
   standardTuning,
@@ -22,6 +23,10 @@ describe('notesOnAString', () => {
     it('should find offset note with zero offset', () => {
       const offsetNote = findOffsetNote('C', 0);
       expect(offsetNote).toBe(notec);
+    });
+    it('should find offset note when negative offset', () => {
+      const offsetNote = findOffsetNote('C', -1);
+      expect(offsetNote).toBe(noteb);
     });
   });
   describe('fretboardWith', () => {

@@ -9,7 +9,6 @@ export default ({ noteName }: Props) => {
   const [toggleNotes, setToggleNotes] = useState(false);
   useHotkeys('ctrl+k', () =>
     setToggleNotes((toggleNotes) => {
-      console.log('Pressed');
       return !toggleNotes;
     })
   );
