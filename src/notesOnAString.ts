@@ -3,19 +3,17 @@ import { Fret, Fretboard, Note, Tuning, TuningInfo } from './types';
 const NUMBER_OF_FRETS = 20;
 
 export const notec = { name: 'C', targetName: 'C' };
-const notecsharp = { name: 'C#', targetName: 'C#/D\u266D' };
-const noted = { name: 'D', targetName: 'D' };
-const notedsharp = { name: 'D#', targetName: 'D#/E\u266D' };
-const notee = { name: 'E', targetName: 'E' };
-const notef = { name: 'F', targetName: 'F' };
-const notefsharp = { name: 'F#', targetName: 'F#/G\u266D' };
-const noteg = { name: 'G', targetName: 'G' };
-const notegsharp = { name: 'G#', targetName: 'G#/A\u266D' };
-const notea = { name: 'A', targetName: 'A' };
-const noteasharp = { name: 'A#', targetName: 'A#/H\u266D' };
-const noteb = { name: 'B', targetName: 'B/H' };
-
-// const noNote = { targetName: 'noNote' };
+export const noted = { name: 'D', targetName: 'D' };
+export const notecsharp = { name: 'C#', targetName: 'C#/D\u266D' };
+export const notedsharp = { name: 'D#', targetName: 'D#/E\u266D' };
+export const notee = { name: 'E', targetName: 'E' };
+export const notef = { name: 'F', targetName: 'F' };
+export const notefsharp = { name: 'F#', targetName: 'F#/G\u266D' };
+export const noteg = { name: 'G', targetName: 'G' };
+export const notegsharp = { name: 'G#', targetName: 'G#/A\u266D' };
+export const notea = { name: 'A', targetName: 'A' };
+export const noteasharp = { name: 'A#', targetName: 'A#/H\u266D' };
+export const noteb = { name: 'B', targetName: 'B/H' };
 
 export const halftones = [
   notec,
@@ -84,7 +82,7 @@ const markNotesOnAString = (
   return fretboardWith(tuning)[stringNumber].frets.map(
     (fret: Fret, fretnumber: number) => ({
       ...fret,
-      offsetNote: fret.targetName === offsetNote.targetName,
+      offsetnote: fret.targetName === offsetNote.targetName,
       rootNote: fret.targetName === rootNoteName,
       fretnumber,
     })
