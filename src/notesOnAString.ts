@@ -82,7 +82,7 @@ const markNotesOnAString = (
   return fretboardWith(tuning)[stringNumber].frets.map(
     (fret: Fret, fretnumber: number) => ({
       ...fret,
-      offsetnote: fret.targetName === offsetNote.targetName,
+      offsetNote: fret.targetName === offsetNote.targetName,
       rootNote: fret.targetName === rootNoteName,
       fretnumber,
     })
