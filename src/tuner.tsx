@@ -17,7 +17,7 @@ interface Props {
 
 export default ({ changeFretboard }: Props): JSX.Element => {
   const [rootnoteName, setRootnoteName] = useState(notec.targetName);
-  const [offset, setOffset] = useState(0);
+  const [offset, setOffset] = useState('0');
   const [tuningName, setTuningName] = useState(standardTuningInfo.name);
 
   const [offsetNote, setOffsetNote] = useState(notec);
@@ -31,14 +31,17 @@ export default ({ changeFretboard }: Props): JSX.Element => {
         onChange={(evt) => {
           const newRootNoteName = evt.target.value;
           setRootnoteName(newRootNoteName);
+          if (isNaN(+offset)) {
+            return;
+          }
           changeFretboard(
             markNotesOnTheFretboard(
               newRootNoteName,
-              offset,
+              parseInt(offset),
               standardTuningInfo.name
             )
           );
-          setOffsetNote(findOffsetNote(newRootNoteName, offset));
+          setOffsetNote(findOffsetNote(newRootNoteName, parseInt(offset)));
         }}
       >
         {halftones.map((t) => {
@@ -55,16 +58,21 @@ export default ({ changeFretboard }: Props): JSX.Element => {
         type="number"
         value={offset}
         onChange={(evt) => {
-          const newOffset = parseInt(evt.target.value ? evt.target.value : '0');
+          const newOffset = evt.target.value;
           setOffset(newOffset);
+          console.log(isNaN(+newOffset));
+          if (isNaN(+newOffset)) {
+            return;
+          }
           changeFretboard(
             markNotesOnTheFretboard(
               rootnoteName,
-              newOffset,
+              parseInt(newOffset),
               standardTuningInfo.name
             )
           );
-          setOffsetNote(findOffsetNote(rootnoteName, newOffset));
+
+          setOffsetNote(findOffsetNote(rootnoteName, parseInt(newOffset)));
         }}
       />
       <span>Schritte weitergehe und</span>
@@ -74,8 +82,15 @@ export default ({ changeFretboard }: Props): JSX.Element => {
         onChange={(evt) => {
           const newTuningName = evt.target.value;
           setTuningName(newTuningName);
+          if (isNaN(+offset)) {
+            return;
+          }
           changeFretboard(
-            markNotesOnTheFretboard(rootnoteName, offset, newTuningName)
+            markNotesOnTheFretboard(
+              rootnoteName,
+              parseInt(offset),
+              newTuningName
+            )
           );
         }}
       >

@@ -27,3 +27,13 @@ jobs:
 
       - name: Test project
         run: yarn run check
+
+      - name: Cypress Tests
+        uses: cypress-io/github-action@v1
+        with:
+          record: true
+          start: yarn start
+        env:
+          # pass the Dashboard record key as an environment variable
+          CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
