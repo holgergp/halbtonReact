@@ -27,3 +27,10 @@ jobs:
 
       - name: Test project
         run: yarn run check
+
+      - name: Cypress Tests
+        uses: cypress-io/github-action@v1
+        with:
+          start: yarn start
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
