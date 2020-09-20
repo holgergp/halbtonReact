@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.scss';
-import Guitar from './guitar';
+import Guitar from './guitar/guitar';
 
 function App() {
   return (

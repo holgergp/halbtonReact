@@ -1,6 +1,6 @@
 import React from 'react';
-import GuitarString from './guitarString';
-import { Fretboard } from './types';
+import GuitarString from '../guitarString/guitarString';
+import { Fretboard } from '../notesOnAString/types';
 
 interface Props {
   fretboard: Fretboard;

@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
 import {
-  notec,
   markNotesOnTheFretboard,
+  notec,
   standardTuningInfo,
-} from './notesOnAString';
-import Tuner from './tuner';
+} from '../notesOnAString/notesOnAString';
+
+import Tuner from '../tuner/tuner';
 import Fretboard from './fretboard';
 
 export default (): JSX.Element => {

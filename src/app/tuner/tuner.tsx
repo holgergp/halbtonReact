@@ -1,15 +1,14 @@
 import React, { useState } from 'react';
-import { Fretboard } from './types';
-import Display from './display';
-
 import {
-  findOffsetNote,
-  halftones,
-  markNotesOnTheFretboard,
   notec,
   standardTuningInfo,
+  markNotesOnTheFretboard,
+  findOffsetNote,
+  halftones,
   tunings,
-} from './notesOnAString';
+} from '../notesOnAString/notesOnAString';
+import { Fretboard } from '../notesOnAString/types';
+import Display from './display';
 
 interface Props {
   changeFretboard: (fretboard: Fretboard) => void;
@@ -17,11 +16,14 @@ interface Props {
 
 export default ({ changeFretboard }: Props): JSX.Element => {
   const [rootnoteName, setRootnoteName] = useState(notec.targetName);
-  const [offset, setOffset] = useState(0);
+  const [offset, setOffset] = useState('0');
   const [tuningName, setTuningName] = useState(standardTuningInfo.name);
 
   const [offsetNote, setOffsetNote] = useState(notec);
 
+  const isNumber = (shouldBeNumber: string) => {
+    return !!shouldBeNumber || isNaN(+shouldBeNumber);
+  };
   return (
     <form className="tuner">
       <span>Wenn ich vom Grundton</span>
@@ -31,14 +33,17 @@ export default ({ changeFretboard }: Props): JSX.Element => {
         onChange={(evt) => {
           const newRootNoteName = evt.target.value;
           setRootnoteName(newRootNoteName);
+          if (!isNumber(offset)) {
+            return;
+          }
           changeFretboard(
             markNotesOnTheFretboard(
               newRootNoteName,
-              offset,
+              parseInt(offset),
               standardTuningInfo.name
             )
           );
-          setOffsetNote(findOffsetNote(newRootNoteName, offset));
+          setOffsetNote(findOffsetNote(newRootNoteName, parseInt(offset)));
         }}
       >
         {halftones.map((t) => {
@@ -55,16 +60,21 @@ export default ({ changeFretboard }: Props): JSX.Element => {
         type="number"
         value={offset}
         onChange={(evt) => {
-          const newOffset = parseInt(evt.target.value ? evt.target.value : '0');
+          const newOffset = evt.target.value;
           setOffset(newOffset);
+          console.log(isNaN(+newOffset));
+          if (!isNumber(newOffset)) {
+            return;
+          }
           changeFretboard(
             markNotesOnTheFretboard(
               rootnoteName,
-              newOffset,
+              parseInt(newOffset),
               standardTuningInfo.name
             )
           );
-          setOffsetNote(findOffsetNote(rootnoteName, newOffset));
+
+          setOffsetNote(findOffsetNote(rootnoteName, parseInt(newOffset)));
         }}
       />
       <span>Schritte weitergehe und</span>
@@ -74,8 +84,15 @@ export default ({ changeFretboard }: Props): JSX.Element => {
         onChange={(evt) => {
           const newTuningName = evt.target.value;
           setTuningName(newTuningName);
+          if (!isNumber(offset)) {
+            return;
+          }
           changeFretboard(
-            markNotesOnTheFretboard(rootnoteName, offset, newTuningName)
+            markNotesOnTheFretboard(
+              rootnoteName,
+              parseInt(offset),
+              newTuningName
+            )
           );
         }}
       >

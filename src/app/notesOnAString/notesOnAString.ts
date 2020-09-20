@@ -106,12 +106,16 @@ export const markNotesOnTheFretboard = (
     {} as Fretboard
   );
 };
+//JS modulo fn gives negative values for negative inputs ...
+const mod = (a: number, b: number): number => {
+  return ((a % b) + b) % b;
+};
 
 export const findOffsetNote = (rootNoteName: string, offset: number): Note => {
   const rootNoteIndex = halftones.findIndex(
     (t: Note) => t.targetName === rootNoteName
   );
-  const targetNoteIndex = (rootNoteIndex + offset) % halftones.length;
+  const targetNoteIndex = mod(rootNoteIndex + offset, halftones.length);
   return halftones[targetNoteIndex];
 };
 

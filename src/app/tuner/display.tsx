@@ -1,5 +1,5 @@
 import React from 'react';
-import { Note } from './types';
+import { Note } from '../notesOnAString/types';
 
 interface Props {
   offsetNote: Note;

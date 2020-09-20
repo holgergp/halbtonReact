@@ -1,5 +1,5 @@
 import React from 'react';
-import { Fret } from './types';
+import { Fret } from '../notesOnAString/types';
 import NoteBubble from './noteBubbles';
 import NoteName from './noteName';
 
