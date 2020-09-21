@@ -3,17 +3,17 @@ describe('Tuner works', () => {
       cy.visit('/');
     });
     it('Select Offsetnote', () => {
-      const selectRootNote = '.tuner--rootNote';
+      const selectRootNote = '[class*="tuner--rootNote"]';
       cy
         .get(selectRootNote)
         .select('E');
-      const selectOffset = '.tuner--offset';
+      const selectOffset = '[class*="tuner--offset"]';
       const offset = '3';
       cy
         .get(selectOffset)
         .type(`{selectall}{backspace}${offset}`);
 
-    const selectOffsetNote = '.display';
+    const selectOffsetNote = '[class*="display"]';
     return cy.get(selectOffsetNote).should('contain', 'G');
     });
   });
