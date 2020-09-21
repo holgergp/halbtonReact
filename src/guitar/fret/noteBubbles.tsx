@@ -1,4 +1,5 @@
 import React from 'react';
+import styles from './fret.module.scss';
 
 interface Props {
   offsetNote?: boolean;
@@ -16,7 +17,7 @@ export default ({ offsetNote = false, rootNote = false }: Props) => {
   }
   return (
     <div className="note">
-      <div className={noteClass}></div>
+      <div className={styles[noteClass]}></div>
     </div>
   );
 };

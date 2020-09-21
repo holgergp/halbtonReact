@@ -4,7 +4,7 @@ import {
   notec,
   standardTuningInfo,
 } from './notesOnAString/notesOnAString';
-import './guitar.scss';
+import styles from './guitar.module.scss';
 
 import Tuner from './tuner/tuner';
 import Fretboard from './fretboard/fretboard';
@@ -15,7 +15,7 @@ export default (): JSX.Element => {
   );
 
   return (
-    <div className="guitar">
+    <div className={styles.guitar}>
       <Tuner changeFretboard={setFretboard} />
       <Fretboard fretboard={fretboard} />
 

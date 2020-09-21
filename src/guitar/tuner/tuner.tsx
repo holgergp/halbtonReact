@@ -9,7 +9,7 @@ import {
 } from '../notesOnAString/notesOnAString';
 import { Fretboard } from '../notesOnAString/types';
 import Display from './display';
-import './tuner.scss';
+import styles from './tuner.module.scss';
 
 interface Props {
   changeFretboard: (fretboard: Fretboard) => void;
@@ -26,10 +26,10 @@ export default ({ changeFretboard }: Props): JSX.Element => {
     return !!shouldBeNumber || isNaN(+shouldBeNumber);
   };
   return (
-    <form className="tuner">
+    <form className={styles.tuner}>
       <span>Wenn ich vom Grundton</span>
       <select
-        className="tuner--rootNote"
+        className={styles['tuner--rootNote']}
         value={rootnoteName}
         onChange={(evt) => {
           const newRootNoteName = evt.target.value;
@@ -57,7 +57,7 @@ export default ({ changeFretboard }: Props): JSX.Element => {
       </select>
 
       <input
-        className="tuner--offset"
+        className={styles['tuner--offset']}
         type="number"
         value={offset}
         onChange={(evt) => {
@@ -80,7 +80,7 @@ export default ({ changeFretboard }: Props): JSX.Element => {
       />
       <span>Schritte weitergehe und</span>
       <select
-        className="tuner--tuning"
+        className={styles['tuner--tuning']}
         value={tuningName}
         onChange={(evt) => {
           const newTuningName = evt.target.value;

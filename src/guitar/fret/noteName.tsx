@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useHotkeys } from 'react-hotkeys-hook';
+import styles from './fret.module.scss';
 
 interface Props {
   noteName: string;
@@ -16,5 +17,5 @@ export default ({ noteName }: Props) => {
     ? 'notename--notesVisible'
     : 'notename--notesInvisible';
 
-  return <div className={'notename ' + toggleNoteClass}>{noteName}</div>;
+  return <div className={styles[toggleNoteClass]}>{noteName}</div>;
 };
