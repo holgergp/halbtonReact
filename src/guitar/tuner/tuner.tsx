@@ -1,30 +1,30 @@
 import React, { useState } from 'react';
 import {
+  fiddleWithFretboard,
+  fiddleWithOffset,
+  fiddleWithOffsetNote,
+} from '../modulator/knobs';
+import {
   notec,
   standardTuningInfo,
-  markNotesOnTheFretboard,
-  findOffsetNote,
   halftones,
   tunings,
-} from '../notesOnAString/notesOnAString';
-import { Fretboard } from '../notesOnAString/types';
+} from '../modulator/modulator';
+import { Fretboard } from '../modulator/types';
 import Display from './display';
 import styles from './tuner.module.scss';
 
 interface Props {
-  changeFretboard: (fretboard: Fretboard) => void;
+  setFretboard: (fretboard: Fretboard) => void;
 }
 
-export default ({ changeFretboard }: Props): JSX.Element => {
+export default ({ setFretboard }: Props): JSX.Element => {
   const [rootnoteName, setRootnoteName] = useState(notec.targetName);
   const [offset, setOffset] = useState('0');
   const [tuningName, setTuningName] = useState(standardTuningInfo.name);
 
   const [offsetNote, setOffsetNote] = useState(notec);
 
-  const isNumber = (shouldBeNumber: string) => {
-    return !!shouldBeNumber || isNaN(+shouldBeNumber);
-  };
   return (
     <form
       className={styles.tuner}
@@ -39,17 +39,13 @@ export default ({ changeFretboard }: Props): JSX.Element => {
         onChange={(evt) => {
           const newRootNoteName = evt.target.value;
           setRootnoteName(newRootNoteName);
-          if (!isNumber(offset)) {
-            return;
-          }
-          changeFretboard(
-            markNotesOnTheFretboard(
-              newRootNoteName,
-              parseInt(offset),
-              standardTuningInfo.name
-            )
+          fiddleWithFretboard(
+            newRootNoteName,
+            offset,
+            tuningName,
+            setFretboard
           );
-          setOffsetNote(findOffsetNote(newRootNoteName, parseInt(offset)));
+          fiddleWithOffsetNote(newRootNoteName, offset, setOffsetNote);
         }}
       >
         {halftones.map((t) => {
@@ -67,20 +63,14 @@ export default ({ changeFretboard }: Props): JSX.Element => {
         value={offset}
         onChange={(evt) => {
           const newOffset = evt.target.value;
-          setOffset(newOffset);
-          console.log(isNaN(+newOffset));
-          if (!isNumber(newOffset)) {
-            return;
-          }
-          changeFretboard(
-            markNotesOnTheFretboard(
-              rootnoteName,
-              parseInt(newOffset),
-              standardTuningInfo.name
-            )
+          fiddleWithOffset(newOffset, setOffset);
+          fiddleWithFretboard(
+            rootnoteName,
+            newOffset,
+            tuningName,
+            setFretboard
           );
-
-          setOffsetNote(findOffsetNote(rootnoteName, parseInt(newOffset)));
+          fiddleWithOffsetNote(rootnoteName, newOffset, setOffsetNote);
         }}
       />
       <span>Schritte weitergehe und</span>
@@ -90,15 +80,11 @@ export default ({ changeFretboard }: Props): JSX.Element => {
         onChange={(evt) => {
           const newTuningName = evt.target.value;
           setTuningName(newTuningName);
-          if (!isNumber(offset)) {
-            return;
-          }
-          changeFretboard(
-            markNotesOnTheFretboard(
-              rootnoteName,
-              parseInt(offset),
-              newTuningName
-            )
+          fiddleWithFretboard(
+            rootnoteName,
+            offset,
+            newTuningName,
+            setFretboard
           );
         }}
       >

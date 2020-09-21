@@ -6,7 +6,7 @@ import {
   notec,
   noted,
   standardTuning,
-} from './notesOnAString';
+} from './modulator';
 
 describe('notesOnAString', () => {
   describe('markNotesOnTheFretboard', () => {

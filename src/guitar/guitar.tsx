@@ -3,7 +3,7 @@ import {
   markNotesOnTheFretboard,
   notec,
   standardTuningInfo,
-} from './notesOnAString/notesOnAString';
+} from './modulator/modulator';
 import styles from './guitar.module.scss';
 
 import Tuner from './tuner/tuner';
@@ -16,7 +16,7 @@ export default (): JSX.Element => {
 
   return (
     <div className={styles.guitar}>
-      <Tuner changeFretboard={setFretboard} />
+      <Tuner setFretboard={setFretboard} />
       <Fretboard fretboard={fretboard} />
 
       <footer>Press CTRL+k to toggle notenames</footer>

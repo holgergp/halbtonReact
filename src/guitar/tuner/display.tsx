@@ -1,5 +1,5 @@
 import React from 'react';
-import { Note } from '../notesOnAString/types';
+import { Note } from '../modulator/types';
 import styles from './tuner.module.scss';
 
 interface Props {

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Fret } from '../notesOnAString/types';
+import { Fret } from '../modulator/types';
 import NoteBubble from './noteBubbles';
 import NoteName from './noteName';
 import styles from './fret.module.scss';
