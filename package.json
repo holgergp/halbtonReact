@@ -27,8 +27,8 @@
     "eject": "react-scripts eject",
     "tsc": "node_modules/.bin/tsc",
     "lint": "node_modules/.bin/eslint ./ --ext .js,.ts,.jsx,.tsx",
-    "lint:fix": "./node_modules/.bin/prettier --single-quote --write \"+(src)/**/*.{js,jsx,ts,tsx,json,css,scss,md}\"",
-    "prettier-check": "prettier --single-quote --check \"+(src)/**/*.{js,jsx,ts,tsx,json,css,scss,md}\"",
+    "lint:fix": "./node_modules/.bin/prettier --single-quote --write \"+(src|cypress)/**/*.{js,jsx,ts,tsx,json,css,scss,md}\"",
+    "prettier-check": "prettier --single-quote --check \"+(src|cypress)/**/*.{js,jsx,ts,tsx,json,css,scss,md}\"",
     "check": "run-s prettier-check tsc lint test",
     "cypress:open": "cypress open",
     "cypress:run": "cypress run"
@@ -60,7 +60,7 @@
     }
   },
   "lint-staged": {
-    "src/**/*.{js,jsx,ts,tsx,json,css,scss,md}": [
+    "+(src|cypress)/**/*.{js,jsx,ts,tsx,json,css,scss,md}": [
       "prettier --single-quote --write",
       "git add"
     ]
