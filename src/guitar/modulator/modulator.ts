@@ -32,19 +32,19 @@ export const halftones = [
 
 export const standardTuning: Tuning = {
   1: notee,
-  2: notea,
-  3: noted,
-  4: noteg,
-  5: noteb,
+  2: noteb,
+  3: noteg,
+  4: noted,
+  5: notea,
   6: notee,
 };
 
 export const dropd: Tuning = {
   1: notee,
-  2: notea,
-  3: noted,
-  4: noteg,
-  5: noteb,
+  2: noteb,
+  3: noteg,
+  4: noted,
+  5: notea,
   6: noted,
 };
 
