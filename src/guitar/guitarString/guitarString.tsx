@@ -1,6 +1,7 @@
 import React from 'react';
 import Fret from '../fret/fret';
 import { GuitarString } from '../notesOnAString/types';
+import './guitarString.scss';
 
 interface Props {
   string: GuitarString;

@@ -1,12 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './app/App';
+import Guitar from './guitar/guitar';
 import './index.scss';
 import * as serviceWorker from './serviceWorker';
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <Guitar />
   </React.StrictMode>,
   document.getElementById('root')
 );

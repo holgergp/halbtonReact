@@ -2,6 +2,7 @@ import React from 'react';
 import { Fret } from '../notesOnAString/types';
 import NoteBubble from './noteBubbles';
 import NoteName from './noteName';
+import './fret.scss';
 
 interface Props {
   fret: Fret;

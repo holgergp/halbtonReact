@@ -1,0 +1,25 @@
+.tuner {
+  display: grid;
+  grid-template-columns: 175px 50px 40px 175px 100px 240px 30px;
+  padding-bottom: 10px;
+  justify-content: center;
+  &--offset {
+    margin-left: 5px;
+    margin-right: 5px;
+  }
+
+  &--rootNote {
+    margin-left: 5px;
+    margin-right: 5px;
+  }
+
+  &--tuning {
+    margin-left: 5px;
+    margin-right: 5px;
+  }
+}
+
+.display {
+  font-weight: bold;
+  margin-left: 5px;
+}

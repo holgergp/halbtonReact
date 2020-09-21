@@ -9,6 +9,7 @@ import {
 } from '../notesOnAString/notesOnAString';
 import { Fretboard } from '../notesOnAString/types';
 import Display from './display';
+import './tuner.scss';
 
 interface Props {
   changeFretboard: (fretboard: Fretboard) => void;

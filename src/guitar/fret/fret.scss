@@ -1,52 +1,3 @@
-.app {
-  padding-top: 10px;
-  padding-left: 10px;
-  width: 850px;
-}
-
-.fretboard {
-  display: flex;
-}
-
-.tuner {
-  display: grid;
-  grid-template-columns: 175px 50px 40px 175px 100px 240px 30px;
-  padding-bottom: 10px;
-  justify-content: center;
-  &--offset {
-    margin-left: 5px;
-    margin-right: 5px;
-  }
-
-  &--rootNote {
-    margin-left: 5px;
-    margin-right: 5px;
-  }
-
-  &--tuning {
-    margin-left: 5px;
-    margin-right: 5px;
-  }
-}
-
-.display {
-  font-weight: bold;
-  margin-left: 5px;
-}
-
-.string {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  background: linear-gradient(
-    180deg,
-    rgba(0, 0, 0, 0) calc(50% - 1px),
-    rgba(192, 192, 192, 1) calc(50%),
-    rgba(0, 0, 0, 0) calc(50% + 1px)
-  );
-}
-
 .fret {
   width: 40px;
   height: 20px;
@@ -125,10 +76,4 @@
     opacity: 1;
     transition: opacity 0.4s ease-in;
   }
-}
-
-footer {
-  padding-top: 10px;
-  font-size: smaller;
-  text-align: center;
 }

@@ -3,10 +3,11 @@ import {
   markNotesOnTheFretboard,
   notec,
   standardTuningInfo,
-} from '../notesOnAString/notesOnAString';
+} from './notesOnAString/notesOnAString';
+import './guitar.scss';
 
-import Tuner from '../tuner/tuner';
-import Fretboard from './fretboard';
+import Tuner from './tuner/tuner';
+import Fretboard from './fretboard/fretboard';
 
 export default (): JSX.Element => {
   const [fretboard, setFretboard] = useState(
@@ -14,7 +15,7 @@ export default (): JSX.Element => {
   );
 
   return (
-    <div>
+    <div className="guitar">
       <Tuner changeFretboard={setFretboard} />
       <Fretboard fretboard={fretboard} />
 
