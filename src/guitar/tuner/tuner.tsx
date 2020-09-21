@@ -26,7 +26,12 @@ export default ({ changeFretboard }: Props): JSX.Element => {
     return !!shouldBeNumber || isNaN(+shouldBeNumber);
   };
   return (
-    <form className={styles.tuner}>
+    <form
+      className={styles.tuner}
+      onSubmit={(e) => {
+        e.preventDefault();
+      }}
+    >
       <span>Wenn ich vom Grundton</span>
       <select
         className={styles['tuner--rootNote']}
