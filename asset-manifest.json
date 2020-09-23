@@ -1,22 +1,22 @@
 {
   "files": {
-    "main.css": "/halbtonReact/static/css/main.469c8574.chunk.css",
-    "main.js": "/halbtonReact/static/js/main.4c509d84.chunk.js",
-    "main.js.map": "/halbtonReact/static/js/main.4c509d84.chunk.js.map",
+    "main.css": "/halbtonReact/static/css/main.2c415b96.chunk.css",
+    "main.js": "/halbtonReact/static/js/main.678eaaba.chunk.js",
+    "main.js.map": "/halbtonReact/static/js/main.678eaaba.chunk.js.map",
     "runtime-main.js": "/halbtonReact/static/js/runtime-main.5ff3a4e5.js",
     "runtime-main.js.map": "/halbtonReact/static/js/runtime-main.5ff3a4e5.js.map",
-    "static/js/2.d534e8a7.chunk.js": "/halbtonReact/static/js/2.d534e8a7.chunk.js",
-    "static/js/2.d534e8a7.chunk.js.map": "/halbtonReact/static/js/2.d534e8a7.chunk.js.map",
+    "static/js/2.01d5e9ac.chunk.js": "/halbtonReact/static/js/2.01d5e9ac.chunk.js",
+    "static/js/2.01d5e9ac.chunk.js.map": "/halbtonReact/static/js/2.01d5e9ac.chunk.js.map",
     "index.html": "/halbtonReact/index.html",
-    "precache-manifest.f329e63cbf524a279c23e6f82623d8ad.js": "/halbtonReact/precache-manifest.f329e63cbf524a279c23e6f82623d8ad.js",
+    "precache-manifest.38ff0c5c572d737565a14a913314a7b5.js": "/halbtonReact/precache-manifest.38ff0c5c572d737565a14a913314a7b5.js",
     "service-worker.js": "/halbtonReact/service-worker.js",
-    "static/css/main.469c8574.chunk.css.map": "/halbtonReact/static/css/main.469c8574.chunk.css.map",
-    "static/js/2.d534e8a7.chunk.js.LICENSE.txt": "/halbtonReact/static/js/2.d534e8a7.chunk.js.LICENSE.txt"
+    "static/css/main.2c415b96.chunk.css.map": "/halbtonReact/static/css/main.2c415b96.chunk.css.map",
+    "static/js/2.01d5e9ac.chunk.js.LICENSE.txt": "/halbtonReact/static/js/2.01d5e9ac.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.5ff3a4e5.js",
-    "static/js/2.d534e8a7.chunk.js",
-    "static/css/main.469c8574.chunk.css",
-    "static/js/main.4c509d84.chunk.js"
+    "static/js/2.01d5e9ac.chunk.js",
+    "static/css/main.2c415b96.chunk.css",
+    "static/js/main.678eaaba.chunk.js"
   ]
 }
