@@ -32,7 +32,7 @@ export default ({ setFretboard }: Props): JSX.Element => {
         e.preventDefault();
       }}
     >
-      <span>Wenn ich vom Grundton</span>
+      <span className={styles['tuner--tunerText']}>Wenn ich vom Grundton</span>
       <select
         className={styles['tuner--rootNote']}
         value={rootnoteName}
@@ -73,7 +73,9 @@ export default ({ setFretboard }: Props): JSX.Element => {
           fiddleWithOffsetNote(rootnoteName, newOffset, setOffsetNote);
         }}
       />
-      <span>Schritte weitergehe und</span>
+      <span className={styles['tuner--tunerText']}>
+        Schritte weitergehe und
+      </span>
       <select
         className={styles['tuner--tuning']}
         value={tuningName}
@@ -96,7 +98,9 @@ export default ({ setFretboard }: Props): JSX.Element => {
           );
         })}
       </select>
-      <span>Tuning verwende, lande ich beim</span>
+      <span className={styles['tuner--tunerText']}>
+        Tuning verwende, lande ich beim
+      </span>
       <Display offsetNote={offsetNote} />
     </form>
   );
