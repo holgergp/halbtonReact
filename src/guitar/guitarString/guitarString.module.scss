@@ -9,4 +9,7 @@
     rgba(192, 192, 192, 1) calc(50%),
     rgba(0, 0, 0, 0) calc(50% + 0.063em)
   );
+  @media (max-width: 480px) {
+    width: 17em;
+  }
 }

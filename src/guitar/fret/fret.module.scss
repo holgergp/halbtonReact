@@ -15,6 +15,10 @@
   &__fretName {
     color: gray;
   }
+  @media (max-width: 480px) {
+    width: 1em;
+    border-right-width: 0.05em;
+  }
 }
 
 @mixin noteBubble {
@@ -27,6 +31,12 @@
   top: 50%;
   left: 50%;
   margin: -0.313em 0 0 -0.313em;
+  @media (max-width: 480px) {
+    width: 0.4em;
+    height: 0.4em;
+    margin: -0.2em 0 0 -0.2em;
+    border-right-width: 0.05em;
+  }
 }
 
 .note {
@@ -71,8 +81,14 @@
     &:hover {
       opacity: 1;
     }
+    @media (max-width: 480px) {
+      font-size: 0.5em;
+    }
   }
   &--notesVisible {
+    @media (max-width: 480px) {
+      font-size: 0.5em;
+    }
     opacity: 1;
     transition: opacity 0.4s ease-in;
   }

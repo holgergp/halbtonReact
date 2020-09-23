@@ -1,3 +1,5 @@
 .fretboard {
-  display: flex;
+  @media (max-width: 480px) {
+    padding-top: 0.75em;
+  }
 }
