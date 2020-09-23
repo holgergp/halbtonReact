@@ -1,25 +1,25 @@
 .tuner {
   display: grid;
-  grid-template-columns: 175px 50px 40px 175px 100px 240px 30px;
-  padding-bottom: 10px;
+  grid-template-columns: 10.938em 3.125em 2.5em 10.938em 6.25em 15em 1.875em;
+  padding-bottom: 0.625em;
   justify-content: center;
   &--offset {
-    margin-left: 5px;
-    margin-right: 5px;
+    margin-left: 0.313em;
+    margin-right: 0.313em;
   }
 
   &--rootNote {
-    margin-left: 5px;
-    margin-right: 5px;
+    margin-left: 0.313em;
+    margin-right: 0.313em;
   }
 
   &--tuning {
-    margin-left: 5px;
-    margin-right: 5px;
+    margin-left: 0.313em;
+    margin-right: 0.313em;
   }
 }
 
 .display {
   font-weight: bold;
-  margin-left: 5px;
+  margin-left: 0.313em;
 }

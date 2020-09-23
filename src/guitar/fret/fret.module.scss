@@ -1,15 +1,15 @@
 .fret {
-  width: 40px;
-  height: 20px;
+  width: 2.5em;
+  height: 1.25em;
   border-right-color: gray;
-  border-right-width: 2px;
+  border-right-width: 0.125em;
   border-right-style: solid;
   align-items: center;
   justify-content: center;
   position: relative;
   &:first-child {
     border-right-color: gray;
-    border-right-width: 10px;
+    border-right-width: 0.625em;
     border-right-style: solid;
   }
   &__fretName {
@@ -22,11 +22,11 @@
   background: lightblue;
   opacity: 1;
   border-radius: 50%;
-  width: 10px;
-  height: 10px;
+  width: 0.625em;
+  height: 0.625em;
   top: 50%;
   left: 50%;
-  margin: -5px 0 0 -5px;
+  margin: -0.313em 0 0 -0.313em;
 }
 
 .note {
@@ -44,15 +44,15 @@
     @keyframes wiggle {
       0% {
         top: 50%;
-        margin-top: -5px;
+        margin-top: -0.313em;
       }
       50% {
         top: 0%;
-        margin-top: 0px;
+        margin-top: 0;
       }
       100% {
         top: 50%;
-        margin-top: -5px;
+        margin-top: -0.313em;
       }
     }
   }
