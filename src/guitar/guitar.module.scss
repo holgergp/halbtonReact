@@ -9,6 +9,9 @@
 }
 
 footer {
+  @media (max-width: 480px) {
+    display: none;
+  }
   padding-top: 0.625em;
   font-size: smaller;
   text-align: center;
