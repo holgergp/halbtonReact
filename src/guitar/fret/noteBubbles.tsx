@@ -7,7 +7,7 @@ interface Props {
 }
 
 export default ({ offsetNote = false, rootNote = false }: Props) => {
-  let noteClass = '';
+  let noteClass: string;
   if (rootNote) {
     noteClass = 'note__root';
   } else if (offsetNote) {
@@ -17,7 +17,7 @@ export default ({ offsetNote = false, rootNote = false }: Props) => {
   }
   return (
     <div className="note">
-      <div className={styles[noteClass]}></div>
+      <div className={styles[noteClass]} />
     </div>
   );
 };

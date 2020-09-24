@@ -126,9 +126,10 @@ const notesOnAString = (stringNumber: number, tuning: Tuning): Note[] => {
     (ton: Note) => ton === startNote
   );
 
-  return fretNumberArray.map((i: number) => {
-    return halftones[(noteIndexNormalized + i) % halftones.length];
-  }, fretNumberArray);
+  return fretNumberArray.map(
+    (i: number) => halftones[(noteIndexNormalized + i) % halftones.length],
+    fretNumberArray
+  );
 };
 
 const frets = (stringNumber: number, tuning: Tuning): Fret[] =>
@@ -139,15 +140,11 @@ const frets = (stringNumber: number, tuning: Tuning): Fret[] =>
     fretnumber,
   }));
 
-export const fretboardWith = (tuning: Tuning): Fretboard => {
-  return stringNumbers(tuning).reduce(
-    (fretboard: Fretboard, stringNumber: number) => {
-      fretboard[stringNumber] = {
-        frets: frets(stringNumber, tuning),
-        stringNumber,
-      };
-      return fretboard;
-    },
-    {} as Fretboard
-  );
-};
+export const fretboardWith = (tuning: Tuning): Fretboard =>
+  stringNumbers(tuning).reduce((fretboard: Fretboard, stringNumber: number) => {
+    fretboard[stringNumber] = {
+      frets: frets(stringNumber, tuning),
+      stringNumber,
+    };
+    return fretboard;
+  }, {} as Fretboard);

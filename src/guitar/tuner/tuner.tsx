@@ -22,7 +22,6 @@ export default ({ setFretboard }: Props): JSX.Element => {
   const [rootnoteName, setRootnoteName] = useState(notec.targetName);
   const [offset, setOffset] = useState('0');
   const [tuningName, setTuningName] = useState(standardTuningInfo.name);
-
   const [offsetNote, setOffsetNote] = useState(notec);
 
   return (
@@ -48,13 +47,11 @@ export default ({ setFretboard }: Props): JSX.Element => {
           fiddleWithOffsetNote(newRootNoteName, offset, setOffsetNote);
         }}
       >
-        {halftones.map((t) => {
-          return (
-            <option key={t.name} value={t.targetName}>
-              {t.name}
-            </option>
-          );
-        })}
+        {halftones.map((t) => (
+          <option key={t.name} value={t.targetName}>
+            {t.name}
+          </option>
+        ))}
       </select>
 
       <input
@@ -90,13 +87,11 @@ export default ({ setFretboard }: Props): JSX.Element => {
           );
         }}
       >
-        {tunings.map((t) => {
-          return (
-            <option key={t.name} value={t.name}>
-              {t.name}
-            </option>
-          );
-        })}
+        {tunings.map((t) => (
+          <option key={t.name} value={t.name}>
+            {t.name}
+          </option>
+        ))}
       </select>
       <span className={styles['tuner--tunerText']}>
         Tuning verwende, lande ich beim
