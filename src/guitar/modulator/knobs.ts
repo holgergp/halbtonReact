@@ -21,7 +21,7 @@ export const fiddleWithFretboard = (
 export const fiddleWithOffset = (
   offset: string,
   setOffset: (offset: string) => void
-) => {
+): void => {
   setOffset(offset);
 };
 
