@@ -10300,10 +10300,10 @@ react-error-overlay@^6.0.9:
   resolved "https://registry.yarnpkg.com/react-error-overlay/-/react-error-overlay-6.0.9.tgz#3c743010c9359608c375ecd6bc76f35d93995b0a"
   integrity sha512-nQTTcUu+ATDbrSD1BZHr5kgSD4oF8OFjxun8uAaL8RwPBacGBNPf/yAuVVdx17N8XNzRDMrZ9XcKZHCjPW+9ew==
 
-react-hotkeys-hook@^2.4.0:
-  version "2.4.0"
-  resolved "https://registry.yarnpkg.com/react-hotkeys-hook/-/react-hotkeys-hook-2.4.0.tgz#becf941641bab04c8095917b5876ad8ed53b0dc6"
-  integrity sha512-Veh9FUe+iXab+lZ5shPoyGDnFBu5codQ15omOXiOvCC/Q5QfTY1lefLVx/Zi2NnYBSXfkfQbhnpE+Rnhi2+wBw==
+react-hotkeys-hook@^3.0.3:
+  version "3.0.3"
+  resolved "https://registry.yarnpkg.com/react-hotkeys-hook/-/react-hotkeys-hook-3.0.3.tgz#5967486a4f569eb7045d2384ed0c35687ac7bdfa"
+  integrity sha512-kbnb820AUITXxK3qRHq612ivoNvMidIEaVAG7rUDuJMBTlJdSniJjjFl0jddL4iSKJK1d0Vqgn80uPW+spq6yQ==
   dependencies:
     hotkeys-js "3.8.1"
 
