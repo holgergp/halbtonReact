@@ -5,15 +5,15 @@
     "main.js.map": "/halbtonReact/static/js/main.6698edeb.chunk.js.map",
     "runtime-main.js": "/halbtonReact/static/js/runtime-main.6141b92a.js",
     "runtime-main.js.map": "/halbtonReact/static/js/runtime-main.6141b92a.js.map",
-    "static/js/2.1a1d536e.chunk.js": "/halbtonReact/static/js/2.1a1d536e.chunk.js",
-    "static/js/2.1a1d536e.chunk.js.map": "/halbtonReact/static/js/2.1a1d536e.chunk.js.map",
+    "static/js/2.8a184972.chunk.js": "/halbtonReact/static/js/2.8a184972.chunk.js",
+    "static/js/2.8a184972.chunk.js.map": "/halbtonReact/static/js/2.8a184972.chunk.js.map",
     "index.html": "/halbtonReact/index.html",
     "static/css/main.62aba0a0.chunk.css.map": "/halbtonReact/static/css/main.62aba0a0.chunk.css.map",
-    "static/js/2.1a1d536e.chunk.js.LICENSE.txt": "/halbtonReact/static/js/2.1a1d536e.chunk.js.LICENSE.txt"
+    "static/js/2.8a184972.chunk.js.LICENSE.txt": "/halbtonReact/static/js/2.8a184972.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.6141b92a.js",
-    "static/js/2.1a1d536e.chunk.js",
+    "static/js/2.8a184972.chunk.js",
     "static/css/main.62aba0a0.chunk.css",
     "static/js/main.6698edeb.chunk.js"
   ]
