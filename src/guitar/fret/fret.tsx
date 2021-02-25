@@ -8,7 +8,7 @@ interface Props {
   fret: Fret;
 }
 
-const fret = ({ fret }: Props): JSX.Element => {
+const FretComponent = ({ fret }: Props): JSX.Element => {
   const { offsetNote, rootNote, name } = fret;
   return (
     <span className={styles.fret}>
@@ -18,4 +18,4 @@ const fret = ({ fret }: Props): JSX.Element => {
   );
 };
 
-export default fret;
+export default FretComponent;
