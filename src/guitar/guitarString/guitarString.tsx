@@ -6,9 +6,11 @@ import styles from './guitarString.module.scss';
 interface Props {
   string: GuitarString;
 }
-export default ({ string }: Props): JSX.Element => {
+const guitarString = ({ string }: Props): JSX.Element => {
   const fretsMarkup = string.frets.map((fret) => {
     return <Fret key={fret.fretnumber} fret={fret} />;
   });
   return <div className={styles.guitarString}>{fretsMarkup}</div>;
 };
+
+export default guitarString;

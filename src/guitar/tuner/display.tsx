@@ -5,6 +5,8 @@ import styles from './tuner.module.scss';
 interface Props {
   offsetNote: Note;
 }
-export default ({ offsetNote }: Props): JSX.Element => (
+const display = ({ offsetNote }: Props): JSX.Element => (
   <div className={styles.display}>{offsetNote.name}</div>
 );
+
+export default display;

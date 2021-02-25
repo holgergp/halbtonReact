@@ -18,7 +18,7 @@ interface Props {
   setFretboard: (fretboard: Fretboard) => void;
 }
 
-export default ({ setFretboard }: Props): JSX.Element => {
+const tuner = ({ setFretboard }: Props): JSX.Element => {
   const [rootnoteName, setRootnoteName] = useState(notec.targetName);
   const [offset, setOffset] = useState('0');
   const [tuningName, setTuningName] = useState(standardTuningInfo.name);
@@ -100,3 +100,5 @@ export default ({ setFretboard }: Props): JSX.Element => {
     </form>
   );
 };
+
+export default tuner;

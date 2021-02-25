@@ -6,7 +6,7 @@ interface Props {
   rootNote?: boolean;
 }
 
-export default ({ offsetNote = false, rootNote = false }: Props) => {
+const noteBubble = ({ offsetNote = false, rootNote = false }: Props) => {
   let noteClass: string;
   if (rootNote) {
     noteClass = 'note__root';
@@ -21,3 +21,5 @@ export default ({ offsetNote = false, rootNote = false }: Props) => {
     </div>
   );
 };
+
+export default noteBubble;

@@ -9,7 +9,7 @@ import styles from './guitar.module.scss';
 import Tuner from './tuner/tuner';
 import Fretboard from './fretboard/fretboard';
 
-export default (): JSX.Element => {
+const guitar = (): JSX.Element => {
   const [fretboard, setFretboard] = useState(
     markNotesOnTheFretboard(notec.targetName, 0, standardTuningInfo.name)
   );
@@ -23,3 +23,5 @@ export default (): JSX.Element => {
     </div>
   );
 };
+
+export default guitar;

@@ -7,7 +7,7 @@ interface Props {
   fretboard: Fretboard;
 }
 
-export default ({ fretboard }: Props): JSX.Element => {
+const fretboard = ({ fretboard }: Props): JSX.Element => {
   const fretBoardMarkup = Object.values(fretboard).map((string) => (
     <div key={string.stringNumber}>
       <GuitarString string={string} />
@@ -15,3 +15,5 @@ export default ({ fretboard }: Props): JSX.Element => {
   ));
   return <div className={styles.fretboard}>{fretBoardMarkup}</div>;
 };
+
+export default fretboard;
