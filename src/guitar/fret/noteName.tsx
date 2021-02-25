@@ -6,7 +6,7 @@ interface Props {
   noteName: string;
 }
 
-export default ({ noteName }: Props) => {
+const NoteNameComponent = ({ noteName }: Props): JSX.Element => {
   const [toggleNotes, setToggleNotes] = useState(false);
   useHotkeys('ctrl+k', () =>
     setToggleNotes((toggleNotes) => {
@@ -19,3 +19,5 @@ export default ({ noteName }: Props) => {
 
   return <div className={styles[toggleNoteClass]}>{noteName}</div>;
 };
+
+export default NoteNameComponent;
