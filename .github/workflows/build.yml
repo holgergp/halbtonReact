@@ -32,7 +32,7 @@ jobs:
         run: yarn run check
 
       - name: Cypress Tests
-        uses: cypress-io/github-action@v1
+        uses: cypress-io/github-action@v2
         with:
           start: yarn start
         env:
