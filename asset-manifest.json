@@ -1,20 +1,20 @@
 {
   "files": {
-    "main.css": "/halbtonReact/static/css/main.89c2fbc6.chunk.css",
-    "main.js": "/halbtonReact/static/js/main.8508b2f6.chunk.js",
-    "main.js.map": "/halbtonReact/static/js/main.8508b2f6.chunk.js.map",
-    "runtime-main.js": "/halbtonReact/static/js/runtime-main.bfbaee94.js",
-    "runtime-main.js.map": "/halbtonReact/static/js/runtime-main.bfbaee94.js.map",
-    "static/js/2.39afa42b.chunk.js": "/halbtonReact/static/js/2.39afa42b.chunk.js",
-    "static/js/2.39afa42b.chunk.js.map": "/halbtonReact/static/js/2.39afa42b.chunk.js.map",
-    "index.html": "/halbtonReact/index.html",
-    "static/css/main.89c2fbc6.chunk.css.map": "/halbtonReact/static/css/main.89c2fbc6.chunk.css.map",
-    "static/js/2.39afa42b.chunk.js.LICENSE.txt": "/halbtonReact/static/js/2.39afa42b.chunk.js.LICENSE.txt"
+    "main.css": "/static/css/main.89c2fbc6.chunk.css",
+    "main.js": "/static/js/main.84f6794e.chunk.js",
+    "main.js.map": "/static/js/main.84f6794e.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.030e1165.js",
+    "runtime-main.js.map": "/static/js/runtime-main.030e1165.js.map",
+    "static/js/2.39afa42b.chunk.js": "/static/js/2.39afa42b.chunk.js",
+    "static/js/2.39afa42b.chunk.js.map": "/static/js/2.39afa42b.chunk.js.map",
+    "index.html": "/index.html",
+    "static/css/main.89c2fbc6.chunk.css.map": "/static/css/main.89c2fbc6.chunk.css.map",
+    "static/js/2.39afa42b.chunk.js.LICENSE.txt": "/static/js/2.39afa42b.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.bfbaee94.js",
+    "static/js/runtime-main.030e1165.js",
     "static/js/2.39afa42b.chunk.js",
     "static/css/main.89c2fbc6.chunk.css",
-    "static/js/main.8508b2f6.chunk.js"
+    "static/js/main.84f6794e.chunk.js"
   ]
 }
