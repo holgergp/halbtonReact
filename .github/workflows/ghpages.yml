@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        node-version: [12.x]
+        node-version: [16.x]
     steps:
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v1
@@ -23,11 +23,10 @@ jobs:
           persist-credentials: false
 
       - name: Setup project
-        run: yarn install --frozen-lockfile
-      - name: Check project
-        run: yarn run check
+        run: npm ci
+
       - name: Build project
-        run: yarn run build --if-present
+        run: npm run build
 
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@releases/v3
