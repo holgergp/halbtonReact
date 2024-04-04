@@ -1,6 +1,6 @@
 import { Fret, Fretboard, Note, Tuning, TuningInfo } from './types';
 
-const NUMBER_OF_FRETS = 20;
+const NUMBER_OF_FRETS = 25;
 
 export const notec = { name: 'C', targetName: 'C' };
 export const noted = { name: 'D', targetName: 'D' };
