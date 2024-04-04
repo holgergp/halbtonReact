@@ -1,10 +1,10 @@
 {
   "files": {
-    "main.css": "/static/css/main.00b452b8.css",
-    "main.js": "/static/js/main.7cba3cf5.js",
-    "index.html": "/index.html",
-    "main.00b452b8.css.map": "/static/css/main.00b452b8.css.map",
-    "main.7cba3cf5.js.map": "/static/js/main.7cba3cf5.js.map"
+    "main.css": "/halbtonReact/static/css/main.00b452b8.css",
+    "main.js": "/halbtonReact/static/js/main.7cba3cf5.js",
+    "index.html": "/halbtonReact/index.html",
+    "main.00b452b8.css.map": "/halbtonReact/static/css/main.00b452b8.css.map",
+    "main.7cba3cf5.js.map": "/halbtonReact/static/js/main.7cba3cf5.js.map"
   },
   "entrypoints": [
     "static/css/main.00b452b8.css",
